@@ -44,7 +44,7 @@ function createTaskItemElement(task) {
 
 function renderTaskList() {
   let olist = document.querySelector('ol');
-  olist.textContent = "";
+  olist.innerHTML = "";
   state.taskList.forEach(function(x) {
     let item = createTaskItemElement(x);
     olist.appendChild(item);
@@ -69,8 +69,8 @@ renderTaskList();
 
 function addNewTask() {
   let newTask = {
-    id: state.taskList.length,
-    descripton: state.inputtedText,
+    id: state.taskList.length+1,
+    description: state.inputtedText,
     complete: false
   };
   state.taskList.push(newTask);
