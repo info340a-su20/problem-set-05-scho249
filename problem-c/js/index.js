@@ -31,7 +31,7 @@ function createTaskItemElement(task) {
   }
     list.addEventListener('click', function() {
       list.classList.toggle('font-strike');
-    })
+    });
 
   return list;
 } 
@@ -48,7 +48,7 @@ function renderTaskList() {
   state.taskList.forEach(function(x) {
     let item = createTaskItemElement(x);
     olist.appendChild(item);
-  })
+  });
 
   renderInput();
 }
@@ -89,7 +89,7 @@ let input = document.querySelector('input');
 input.addEventListener('input', function() {
   state.inputtedText = input.value;
   renderInput();
-})
+});
 
 
 //Add an event listener to the "add task"`button` (check the HTML for its id!) 
@@ -115,7 +115,7 @@ taskbtn.addEventListener("click", addNewTask);
 //user interaction).
 
 function renderInput() {
-  let input = document.querySelector('#task-input');
+  let input = document.querySelector('input');
   let btn = document.querySelector('button');
   input.value = state.inputtedText;
   if (state.inputtedText == "") {
